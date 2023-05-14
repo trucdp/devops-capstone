@@ -4,19 +4,47 @@ orbs:
   docker: circleci/docker@2.2.0
 
 jobs:
-  validate-terraform-config:
-    docker: 
-      - image: hashicorp/terraform:light
+  init:
+    docker:
+      - image: python:3.7.3-stretch
     steps:
       - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "app/requirements.txt" }}
+          
       - run:
-          name: Validate dev environment
+          name: Install dependencies
           command: |
-            cd infrastructure
-            terraform init
-            terraform validate
-            terraform fmt -check
+            python3 -m venv .devops-capstone
+            source .devops-capstone/bin/activate
+            make install
+      - save_cache:
+          paths:
+            - ./.devops-capstone # TODO: Include in cache the "bin" directory
+          key: v1-dependencies-{{ checksum "app/requirements.txt" }}
+      - run:
+          name: Run lint
+          command: |
+            source .devops-capstone/bin/activate
+            make lint
+
 workflows:
   default:
     jobs:
-      - validate-terraform-config
+      - init
+      - docker/publish:
+          matrix:
+            parameters:
+              image: [$DOCKER_LOGIN/app]
+              path: [app]
+              docker-context: [app]
+              deploy: [true]
+              # We publish two images with different version tags:
+              # - numbered version
+              # - "latest"
+              # tag: ['$(<hello_app/VERSION.txt)-${CIRCLE_SHA1:0:7}', 'latest']
+              tag: ["$(app/VERSION.txt)", "latest"]
+              update-description: [true]
+          requires: [init]
