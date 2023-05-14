@@ -36,9 +36,6 @@ install:	# TODO: Add a Docker analysis (DevSecOps)
 	echo "Installing: kubectl"
 	./scripts/install_kubectl.sh
 	echo
-	echo "Installing: eksctl"
-	./scripts/install_eksctl.sh
-	
 test:
 	# Additional, optional, tests could go here
 	#python -m pytest -vv app/app.py
@@ -70,7 +67,6 @@ ci-validate:
 	circleci config validate
 
 k8s-deployment: eks-create-cluster
-	# If using minikube, first run: minikube start
 	./scripts/k8s_deployment.sh
 
 port-forwarding: 
@@ -103,8 +99,7 @@ k8s-cleanup-resources:
 	./scripts/k8s_cleanup_resources.sh
 
 eks-create-cluster:
-	./scripts/eks_create_cluster.sh
+	./scripts/deploy-infra.sh
 
 eks-delete-cluster:
-	./scripts/eksctl delete cluster --name "${CLUSTER_NAME}" \
-		--region "${REGION_NAME}"
+	./scripts/deploy-infra.sh

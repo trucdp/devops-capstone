@@ -13,8 +13,7 @@ REPLICAS=4
 dockerpath=${DOCKER_HUB_ID}/${DOCKER_REPOSITORY}:${VERSION}
 
 # Run the Docker Hub container with kubernetes
-kubectl create deployment ${DEPLOYMENT_NAME} --image=${dockerpath} --replicas=${REPLICAS} &&
-    kubectl expose deployment/${DEPLOYMENT_NAME} --type="LoadBalancer" --port ${CONTAINER_PORT}
+kubectl apply -f k8s/
 
 # List kubernetes resources
 echo
