@@ -9,7 +9,7 @@ DEPLOYMENT_NAME=app
 NEW_IMAGE_NAME=registry.hub.docker.com/trucdp/app:latest
 CONTAINER_PORT=80
 HOST_PORT=8080
-KUBECTL=./scripts/kubectl
+KUBECTL=kubectl
 
 setup:
 	# Create a python virtualenv & activate it
@@ -45,10 +45,10 @@ lint:
 	# https://github.com/koalaman/shellcheck: a linter for shell scripts
 	./scripts/shellcheck -Cauto -a ./scripts/*.sh
 	# https://github.com/hadolint/hadolint: a linter for Dockerfiles
-	./scripts/hadolint hello_app/Dockerfile
+	./scripts/hadolint app/Dockerfile
 	# https://www.pylint.org/: a linter for Python source code 
 	# This should be run from inside a virtualenv
-	pylint --output-format=colorized --disable=C hello_app/hello.py
+	pylint --output-format=colorized --disable=C app/hello.py
 
 run-app:
 	python3 app/app.py
