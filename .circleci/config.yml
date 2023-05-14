@@ -42,7 +42,7 @@ workflows:
               docker-context: [app]
               deploy: [true]
               # We publish two images with different version tags:
-              # - numbered version
+              # - numbered version # - "latest"
               # - "latest"
               # tag: ['$(<hello_app/VERSION.txt)-${CIRCLE_SHA1:0:7}', 'latest']
               tag: ["$(app/VERSION.txt)", "latest"]
