@@ -105,3 +105,5 @@ eks-create-cluster:
 eks-delete-cluster:
 	cd ./infrastructure &&
 	./scripts/destroy-infra.sh	
+eks-lbc:
+	cd ../infrastructure/lbc && ./scripts/deploy-infra.sh
