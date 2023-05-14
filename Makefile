@@ -66,7 +66,7 @@ ci-validate:
 	# Required file: .circleci/config.yml
 	circleci config validate
 
-k8s-deployment: eks-create-cluster
+k8s-deployment: 
 	./scripts/k8s_deployment.sh
 
 port-forwarding: 
