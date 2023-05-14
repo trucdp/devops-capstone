@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app-nginx
-          image: trucdp/app:1.000
+          image: trucdp/app:2.000
           ports:
             - containerPort: 80
 ---

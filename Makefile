@@ -99,7 +99,9 @@ k8s-cleanup-resources:
 	./scripts/k8s_cleanup_resources.sh
 
 eks-create-cluster:
+	cd ./infrastructure &&
 	./scripts/deploy-infra.sh
 
 eks-delete-cluster:
-	./scripts/deploy-infra.sh	
+	cd ./infrastructure &&
+	./scripts/destroy-infra.sh	
