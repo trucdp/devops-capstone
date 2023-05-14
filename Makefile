@@ -102,4 +102,4 @@ eks-create-cluster:
 	./scripts/deploy-infra.sh
 
 eks-delete-cluster:
-	./scripts/deploy-infra.sh
+	./scripts/deploy-infra.sh	
