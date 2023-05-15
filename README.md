@@ -95,10 +95,13 @@ The following shell scripts are invoked from the [Makefile](./Makefile)
 
 * [EKS](./img/eks-cluster.png): Cluster EKS
 * [Node](./img/nodegroups.png): Node Groups Deploy app
+* [Install Dependence](./img/install-dependence.png): Install dependence
+* [Roll back v2](./img/rollback-v2.png): Roll back V2
 * [Fail](./img/fail-lint.png): Fail lint job
 * [Success](./img/success-lint.png): Sucess lint job
 * [Pipeline](./img/pipeline.png): Pipeline success
 * [Website](./img/website.png): Website use Ingress Nginx
+
 
 
 
