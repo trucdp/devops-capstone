@@ -86,3 +86,27 @@ The following shell scripts are invoked from the [Makefile](./Makefile)
 * [install_shellcheck.sh](./scripts/install_shellcheck.sh): installs the shellcheck(for shell scripts) linter tool
 * [k8s_cleanup_resources.sh](./scripts/k8s_cleanup_resources.sh): deletes services and deployments in a K8S cluster
 * [k8s_deployment.sh](./scripts/k8s_deployment.sh): deploys and exposes a service in the K8S cluster
+# Output K8s
+* [pod](./outputs/pod.txt): Pod of app
+* [service](./outputs/service.txt): Service of app
+* [service](./outputs/deployment.txt): Deployment of app
+* [ingress](./outputs/ingress.txt): Ingress of app 
+# Image
+
+* [EKS](./img/eks-cluster.png): Cluster EKS
+* [Node](./img/nodegroups.png): Node Groups Deploy app
+* [Fail](./img/fail-lint.png): Fail lint job
+* [Success](./img/success-lint.png): Sucess lint job
+* [Pipeline](./img/pipeline.png): Pipeline success
+* [Website](./img/website.png): Website use Ingress Nginx
+
+
+
+
+
+
+
+
+
+
+

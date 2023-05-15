@@ -1,0 +1,92 @@
+Name:             app-nginx-deployment-5b7487bcdc-jgfz8
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             ip-10-0-1-73.ec2.internal/10.0.1.73
+Start Time:       Sun, 14 May 2023 23:31:21 +0700
+Labels:           app=app-nginx
+                  pod-template-hash=5b7487bcdc
+Annotations:      <none>
+Status:           Running
+IP:               10.0.1.59
+IPs:
+  IP:           10.0.1.59
+Controlled By:  ReplicaSet/app-nginx-deployment-5b7487bcdc
+Containers:
+  app-nginx:
+    Container ID:   containerd://488031c21f4a2a9cce54f9173dcdd27a0022048da357ef383f8f9875a7f692a5
+    Image:          trucdp/app:3.000
+    Image ID:       docker.io/trucdp/app@sha256:02db9c6d82316b1014b9b7d748fe99c1fc864af1c8fc511847f73df43d34af64
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 14 May 2023 23:31:22 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-spw5k (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-spw5k:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:                      <none>
+Name:             app-nginx-deployment-5b7487bcdc-jgfz8
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             ip-10-0-1-73.ec2.internal/10.0.1.73
+Start Time:       Sun, 14 May 2023 23:31:21 +0700
+Labels:           app=app-nginx
+                  pod-template-hash=5b7487bcdc
+Annotations:      <none>
+Status:           Running
+IP:               10.0.1.59
+IPs:
+  IP:           10.0.1.59
+Controlled By:  ReplicaSet/app-nginx-deployment-5b7487bcdc
+Containers:
+  app-nginx:
+    Container ID:   containerd://488031c21f4a2a9cce54f9173dcdd27a0022048da357ef383f8f9875a7f692a5
+    Image:          trucdp/app:3.000
+    Image ID:       docker.io/trucdp/app@sha256:02db9c6d82316b1014b9b7d748fe99c1fc864af1c8fc511847f73df43d34af64
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 14 May 2023 23:31:22 +0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-spw5k (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-spw5k:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:                      <none>

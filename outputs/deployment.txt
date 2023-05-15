@@ -1,0 +1,28 @@
+Name:                   app-nginx-deployment
+Namespace:              default
+CreationTimestamp:      Sun, 14 May 2023 23:09:08 +0700
+Labels:                 app=app-nginx
+Annotations:            deployment.kubernetes.io/revision: 8
+Selector:               app=app-nginx
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=app-nginx
+  Containers:
+   app-nginx:
+    Image:        trucdp/app:3.000
+    Port:         80/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   app-nginx-deployment-5b7487bcdc (1/1 replicas created)
+Events:          <none>
